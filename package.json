@@ -1,0 +1,38 @@
+{
+  "name": "webpack-hot-server-middleware-example",
+  "version": "0.0.1",
+  "description": "Example usage of webpack-hot-server-middleware",
+  "main": "index.js",
+  "scripts": {
+    "dev": "yarn build:dev && yarn start",
+    "start": "NODE_ENV=development node projects/op/dist/server.js",
+    "build:dev": "NODE_ENV=development webpack --config webpack.server.config.js",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config webpack.client.config.js --config webpack.server.config.js",
+    "serve": "NODE_ENV=production node projects/op/dist/server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/component": "^5.15.2",
+    "@loadable/server": "^5.15.2",
+    "@loadable/webpack-plugin": "^5.15.2",
+    "express": "^4.16.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^5.39.1",
+    "webpack-dev-middleware": "^5.3.0",
+    "webpack-hot-server-middleware": "^0.6.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.15",
+    "webpack-cli": "^4.9.2",
+    "webpack-hot-middleware": "^2.25.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
